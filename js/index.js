@@ -42,7 +42,7 @@ async function fetchAndUpdateWeather(city) {
     cityElement.textContent = data.name;
     feelsLikeElement.textContent = "Feels like " + Math.round(data.main.feels_like) + "°C";
     humidityElement.textContent = data.main.humidity + "%";
-    windElement.textContent = data.wind.speed + " km/h";
+    windElement.textContent = data.wind.speed * 3.6 + " km/h"; // m/s to km/h
     weatherDescElement.textContent = data.weather[0].main;
     countryElement.textContent = data.sys.country ? `in ${data.sys.country}` : ""; // Handle missing country
 
